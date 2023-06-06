@@ -25,6 +25,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "one of my biggest project"
   }
 }
