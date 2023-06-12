@@ -5,6 +5,52 @@ import { TailwindProvider } from 'tailwindcss-react-native';
 
 export default function App() {
   const [const1, setMyConst] = useState('0');
+
+
+    const defaultValue = 0;
+    const [resultValue, setResultValue] = useState(defaultValue)
+    const [inputValue, setInputValue] = useState('');
+  
+    const handleInputChange = (text) => {
+      setInputValue(text);
+    };
+  
+    const handleButtonPress = () => {
+      // Here, you can use the inputValue value as needed
+
+      const myConst = inputValue;
+      const myArray = const1.split(" ");
+      const ma1 = myArray[1];
+      const ma2 = parseFloat(myArray[2]);
+      const ma0 = parseFloat(myArray[0]);
+      console.log(ma0)
+      console.log(ma1)
+      console.log(ma2)
+      if(myArray.length = 2) {
+        setMyConst('Invalid Expression')
+        return 0;
+      }
+        if(ma1=="+"){
+          setMyConst((ma0 + ma2).toString())
+      }else if(ma2==" " || ma1==" "){
+        setMyConst(' ');
+      }
+       if(ma1=="-"){
+        setMyConst((ma0 - ma2).toString())
+      }else if(ma2==" " || ma1==" "){
+        setMyConst(' ');
+      }
+       if(ma1=="*"){
+        setMyConst((ma0 * ma2).toString())
+      }else if(ma2==" " || ma1==" "){
+        setMyConst(' ');
+      }
+       if(ma1=="/"){
+        setMyConst((ma0 / ma2).toString())
+   }else if(ma2==" " || ma1==" "){
+    setMyConst(' ');
+  }
+ }
   const handleClick1 = () => {
     if(const1==0){
       setMyConst('1');
@@ -17,6 +63,27 @@ export default function App() {
       setMyConst(' + ');
     }else{
       setMyConst(const1+' + ');
+    }
+  }
+  const handleClickminus = () => {
+    if(const1==0){
+      setMyConst(' - ');
+    }else{
+      setMyConst(const1+' - ');
+    }
+  }
+  const handleClickmul = () => {
+    if(const1==0){
+      setMyConst(' * ');
+    }else{
+      setMyConst(const1+' * ');
+    }
+  }
+  const handleClickdiv = () => {
+    if(const1==0){
+      setMyConst(' / ');
+    }else{
+      setMyConst(const1+' / ');
     }
   }
   const handleClick0 = () => {
@@ -54,6 +121,9 @@ export default function App() {
       setMyConst(const1+'5');
     }
   } 
+  const handleClickpi = () => {
+      setMyConst('3.14159265359');
+  }
   const handleClick6 = () => {
     if(const1==0){
       setMyConst('6');
@@ -102,8 +172,8 @@ export default function App() {
   return (
     <TailwindProvider>
       <View className="items-center z-10 mt-32 ">
-      <View className="bg-purple-400 z-10 w-80 h-20 text-3xl mt-9 inline-block rounded-xl  justify-center items-end  ">
-        <Text className="mr-3 text-3xl">{const1}</Text>
+      <View value={inputValue} onChangeText={handleInputChange} className="bg-purple-400 z-10 w-80 h-20 text-3xl mt-9 inline-block rounded-xl  justify-center items-end  ">
+        <Text value={resultValue}className="mr-3 text-3xl">{const1}</Text>
       </View>
       </View>
       <View className="bg-whitesmoke text-white h-full  flex justify-center items-center">
@@ -122,8 +192,8 @@ export default function App() {
            <TouchableOpacity onPress={handleClick1} className="bg-red-400 w-20 h-16 text-3xl ml-6 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text  className="text-2xl">1</Text>
            </TouchableOpacity>
-           <TouchableOpacity  className="bg-orange-400 w-20 h-16 text-3xl ml-6 mt-3 inline-block rounded-xl justify-center items-center ">
-            <Text className="text-2xl">+/-</Text>
+           <TouchableOpacity onPress={  handleClick0} className="bg-red-400 w-20 h-16 text-3xl ml-6 mt-3 inline-block rounded-xl justify-center items-center ">
+            <Text className="text-2xl">0</Text>
            </TouchableOpacity>
            </View>
                    <View  className=" ml-30" style={{flexDirection:'column'}}>
@@ -139,8 +209,8 @@ export default function App() {
            <TouchableOpacity onPress={  handleClick2} className="bg-red-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">2</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={  handleClick0} className="bg-red-400 w-20 h-16 text-3xl ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
-            <Text className="text-2xl">0</Text>
+           <TouchableOpacity onPress={  handleClickzz } className="bg-red-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+            <Text className="text-2xl">00</Text>
            </TouchableOpacity>
            </View>
            <View  className=" ml-30" style={{flexDirection:'column'}}>
@@ -153,33 +223,33 @@ export default function App() {
            <TouchableOpacity onPress={  handleClick6} className="bg-red-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">6</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={handleClick3} className="bg-red-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={handleClick3} className="bg-red-400 w-20 h-16 text-3xl   ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">3</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={  handleClickzz } className="bg-red-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
-            <Text className="text-2xl">00</Text>
+           <TouchableOpacity onPress={handleClickpi} className="bg-pink-400 w-20 h-16 text-3xl mr-3  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+            <Text className="text-2xl">pi</Text>
            </TouchableOpacity>
            </View>
            <View  className=" ml-30" style={{flexDirection:'column'}}>
-           <TouchableOpacity   className="bg-green-400 w-20 h-16 text-3xl ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity  onPress={handleClickdiv} className="bg-green-400 w-20 h-16 text-3xl ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">/</Text>
            </TouchableOpacity>
-           <TouchableOpacity  className="bg-green-400 w-20 h-16 text-3xl ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
-            <Text className="text-2xl">X</Text>
+           <TouchableOpacity onPress={handleClickmul}  className="bg-green-400 w-20 h-16 text-3xl ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+            <Text className="text-3xl">*</Text>
            </TouchableOpacity>
-           <TouchableOpacity  className="bg-green-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={handleClickminus} className="bg-green-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-5xl">-</Text>
            </TouchableOpacity>
            <TouchableOpacity   onPress={handleClickplus} className="bg-green-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">+</Text>
            </TouchableOpacity>
-           <TouchableOpacity   className="bg-blue-400 w-20 h-16 text-3xl ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity  onPress={ handleButtonPress } className="bg-blue-400 w-20 h-16 text-3xl mt-3 ml-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">=</Text>
            </TouchableOpacity>
            </View>          
       </SafeAreaView>
       </View>
-      {/* <StatusBar style="auto" /> */}
+ <StatusBar style="auto" />
     </TailwindProvider>
   );
 }
