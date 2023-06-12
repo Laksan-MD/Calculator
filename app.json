@@ -21,11 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.laksanmd.Calculator"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "one of my biggest project"
+    "description": "one of my biggest project",
+    "extra": {
+      "eas": {
+        "projectId": "b6b4dd59-f7e7-4c69-98a0-dd80e481920e"
+      }
+    }
   }
 }

@@ -18,15 +18,12 @@ export default function App() {
     const handleButtonPress = () => {
       // Here, you can use the inputValue value as needed
 
-      const myConst = inputValue;
-      const myArray = const1.split(" ");
+      const myConst = inputValue.trim();
+      const myArray = const1.trim().split(" ");
       const ma1 = myArray[1];
       const ma2 = parseFloat(myArray[2]);
       const ma0 = parseFloat(myArray[0]);
-      console.log(ma0)
-      console.log(ma1)
-      console.log(ma2)
-      if(myArray.length = 2) {
+      if(myArray.length != 3) {
         setMyConst('Invalid Expression')
         return 0;
       }
@@ -171,8 +168,8 @@ export default function App() {
   }
   return (
     <TailwindProvider>
-      <View className="items-center z-10 mt-32 ">
-      <View value={inputValue} onChangeText={handleInputChange} className="bg-purple-400 z-10 w-80 h-20 text-3xl mt-9 inline-block rounded-xl  justify-center items-end  ">
+      <View className="items-center z-10  ">
+      <View  value={inputValue} onChangeText={handleInputChange} className="bg-purple-400 z-10 w-80 h-20 text-3xl mt-9 inline-block rounded-xl  justify-center items-end  ">
         <Text value={resultValue}className="mr-3 text-3xl">{const1}</Text>
       </View>
       </View>
@@ -231,19 +228,19 @@ export default function App() {
            </TouchableOpacity>
            </View>
            <View  className=" ml-30" style={{flexDirection:'column'}}>
-           <TouchableOpacity  onPress={handleClickdiv} className="bg-green-400 w-20 h-16 text-3xl ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity  onPress={handleClickdiv} className="bg-green-400 w-20 h-16 text-3xl ml-1 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">/</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={handleClickmul}  className="bg-green-400 w-20 h-16 text-3xl ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={handleClickmul}  className="bg-green-400 w-20 h-16 text-3xl ml-1 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-3xl">*</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={handleClickminus} className="bg-green-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={handleClickminus} className="bg-green-400 w-20 h-16 text-3xl  ml-1 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-5xl">-</Text>
            </TouchableOpacity>
-           <TouchableOpacity   onPress={handleClickplus} className="bg-green-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity   onPress={handleClickplus} className="bg-green-400 w-20 h-16 text-3xl  ml-1 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">+</Text>
            </TouchableOpacity>
-           <TouchableOpacity  onPress={ handleButtonPress } className="bg-blue-400 w-20 h-16 text-3xl mt-3 ml-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity  onPress={ handleButtonPress } className="bg-blue-400 w-20 h-16 text-3xl mt-3 ml-1 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">=</Text>
            </TouchableOpacity>
            </View>          
