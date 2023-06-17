@@ -2,8 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { SafeAreaView ,View ,TouchableOpacity, Text, TextInput} from 'react-native';
 import { TailwindProvider } from 'tailwindcss-react-native';
+import { horizontalScale, moderateScale, verticalScale } from './metric.js';
+
+
 
 export default function App() {
+
   const [const1, setMyConst] = useState('0');
 
 
@@ -25,6 +29,10 @@ export default function App() {
       const ma0 = parseFloat(myArray[0]);
       if(myArray.length != 3) {
         setMyConst('Invalid Expression')
+        return 0;
+      }
+      if(myArray.length != 3) {
+        setMyConst(myConst)
         return 0;
       }
         if(ma1=="+"){
@@ -169,7 +177,7 @@ export default function App() {
   return (
     <TailwindProvider>
       <View className="items-center z-10  ">
-      <View  value={inputValue} onChangeText={handleInputChange} className="bg-purple-400 z-10 w-80 h-20 text-3xl mt-9 inline-block rounded-xl  justify-center items-end  ">
+      <View  value={inputValue} onChangeText={handleInputChange} style={{width:horizontalScale(300) ,height:verticalScale(74)}}className="bg-purple-400 z-10  text-3xl mt-9 inline-block rounded-full  justify-center items-end  ">
         <Text value={resultValue}className="mr-3 text-3xl">{const1}</Text>
       </View>
       </View>
@@ -177,70 +185,70 @@ export default function App() {
       {/* <Text  onPress={  handleClick("Pressed The Text")} className="text-2xl text-white">Laksan</Text> */}
       <SafeAreaView style={{flexDirection:"row"}} className=" mb-96 bg-[#ffffff] h-full w-full flex items-center rounded-xl">  
         <View style={{flexDirection:'column'}}>
-           <TouchableOpacity onPress={handleClickCE} className="bg-indigo-400 w-20 h-16 text-3xl  ml-6 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={handleClickCE} style={{width:horizontalScale(74) ,height:verticalScale(63)}}className="bg-indigo-400  text-3xl  ml-6 mt-1 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">CE</Text>
            </TouchableOpacity>
-           <TouchableOpacity  onPress={handleClick7} className="bg-red-400 w-20 h-16 text-3xl mt-3 ml-6 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity  onPress={handleClick7}style={{width:horizontalScale(74) ,height:verticalScale(63)}} className="bg-red-400 w-20 h-16 text-3xl mt-3 ml-6 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">7</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={handleClick4} className="bg-red-400 w-20 h-16 text-3xl ml-6 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={handleClick4}style={{width:horizontalScale(74) ,height:verticalScale(63)}} className="bg-red-400 w-20 h-16 text-3xl ml-6 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">4</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={handleClick1} className="bg-red-400 w-20 h-16 text-3xl ml-6 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={handleClick1}style={{width:horizontalScale(74) ,height:verticalScale(63)}} className="bg-red-400 w-20 h-16 text-3xl ml-6 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text  className="text-2xl">1</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={  handleClick0} className="bg-red-400 w-20 h-16 text-3xl ml-6 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={  handleClick0} style={{width:horizontalScale(74) ,height:verticalScale(63)}}className="bg-red-400 w-20 h-16 text-3xl ml-6 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">0</Text>
            </TouchableOpacity>
            </View>
                    <View  className=" ml-30" style={{flexDirection:'column'}}>
-           <TouchableOpacity   className="bg-indigo-400 w-20 h-16 text-3xl ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity   style={{width:horizontalScale(74) ,height:verticalScale(63)}}className="bg-indigo-400 w-20 h-16 text-3xl ml-3 mt-1 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">C</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={handleClick8}  className="bg-red-400 w-20 h-16 text-3xl ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={handleClick8}  style={{width:horizontalScale(74) ,height:verticalScale(63)}}className="bg-red-400 w-20 h-16 text-3xl ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">8</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={  handleClick5} className="bg-red-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={  handleClick5}style={{width:horizontalScale(74) ,height:verticalScale(63)}} className="bg-red-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">5</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={  handleClick2} className="bg-red-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={  handleClick2} style={{width:horizontalScale(74) ,height:verticalScale(63)}}className="bg-red-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">2</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={  handleClickzz } className="bg-red-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={  handleClickzz } style={{width:horizontalScale(74) ,height:verticalScale(63)}}className="bg-red-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">00</Text>
            </TouchableOpacity>
            </View>
            <View  className=" ml-30" style={{flexDirection:'column'}}>
-           <TouchableOpacity onPress={  handleClickdot } className="bg-yellow-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={  handleClickdot }style={{width:horizontalScale(74) ,height:verticalScale(63)}} className="bg-yellow-400 w-20 h-16 text-3xl  ml-3 mt-1 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">.</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={  handleClick9} className="bg-red-400 w-20 h-16 text-3xl ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={  handleClick9} style={{width:horizontalScale(74) ,height:verticalScale(63)}}className="bg-red-400 w-20 h-16 text-3xl ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">9</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={  handleClick6} className="bg-red-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={  handleClick6}style={{width:horizontalScale(74) ,height:verticalScale(63)}} className="bg-red-400 w-20 h-16 text-3xl  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">6</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={handleClick3} className="bg-red-400 w-20 h-16 text-3xl   ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={handleClick3}style={{width:horizontalScale(74) ,height:verticalScale(63)}} className="bg-red-400 w-20 h-16 text-3xl   ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">3</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={handleClickpi} className="bg-pink-400 w-20 h-16 text-3xl mr-3  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={handleClickpi}style={{width:horizontalScale(74) ,height:verticalScale(63)}} className="bg-pink-400 w-20 h-16 text-3xl mr-3  ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">pi</Text>
            </TouchableOpacity>
            </View>
            <View  className=" ml-30" style={{flexDirection:'column'}}>
-           <TouchableOpacity  onPress={handleClickdiv} className="bg-green-400 w-20 h-16 text-3xl ml-1 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity  onPress={handleClickdiv}style={{width:horizontalScale(74) ,height:verticalScale(63)}} className="bg-green-400 w-20 h-16 text-3xl ml-1 mt-1 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">/</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={handleClickmul}  className="bg-green-400 w-20 h-16 text-3xl ml-1 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={handleClickmul}style={{width:horizontalScale(74) ,height:verticalScale(63)}}  className="bg-green-400 w-20 h-16 text-3xl ml-1 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-3xl">*</Text>
            </TouchableOpacity>
-           <TouchableOpacity onPress={handleClickminus} className="bg-green-400 w-20 h-16 text-3xl  ml-1 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity onPress={handleClickminus} style={{width:horizontalScale(74) ,height:verticalScale(63)}}className="bg-green-400 w-20 h-16 text-3xl  ml-1 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-5xl">-</Text>
            </TouchableOpacity>
-           <TouchableOpacity   onPress={handleClickplus} className="bg-green-400 w-20 h-16 text-3xl  ml-1 mt-3 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity   onPress={handleClickplus}style={{width:horizontalScale(74) ,height:verticalScale(63)}} className="bg-green-400 w-20 h-16 text-3xl  ml-1 mt-3 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">+</Text>
            </TouchableOpacity>
-           <TouchableOpacity  onPress={ handleButtonPress } className="bg-blue-400 w-20 h-16 text-3xl mt-3 ml-1 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity  onPress={ handleButtonPress }style={{width:horizontalScale(74) ,height:verticalScale(63)}} className="bg-blue-400 w-20 h-16 text-3xl mt-3 ml-1 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">=</Text>
            </TouchableOpacity>
            </View>          
