@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { SafeAreaView ,View ,TouchableOpacity, Text, TextInput} from 'react-native';
 import { TailwindProvider } from 'tailwindcss-react-native';
 import { horizontalScale, moderateScale, verticalScale } from './metric.js';
-import useOrientation from './useOrientation.js';
+
 
 
 
@@ -181,7 +181,6 @@ export default function App() {
       setMyConst(const1+'00');
     }
   }
-  const orientation = useOrientation();
   return (
     <TailwindProvider>
       <View className="items-center z-10  ">
