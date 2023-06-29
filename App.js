@@ -70,10 +70,6 @@ export default function App() {
     const ma1 = myArray[1];
     const ma2 = parseFloat(myArray[2]);
     const ma0 = parseFloat(myArray[0]);
-    if(ma1=="+"){
-              console.log(setMyConst((ma0 + ma2).toString()))
-
-          }
     console.log(myArray)
     if(const1==0){
       setMyConst(' + ');
