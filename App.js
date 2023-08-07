@@ -183,7 +183,7 @@ export default function App() {
   }
   return (
     <TailwindProvider>
-      <View className=" z-10  ">
+      <View className="items-center z-10  ">
       <View  value={inputValue} onChangeText={handleInputChange} style={{width:horizontalScale(300) ,height:verticalScale(74)}}className="bg-purple-400 z-10  text-3xl mt-9 inline-block rounded-full  justify-center items-end  ">
         <Text value={resultValue}className="mr-3 text-3xl">{const1}</Text>
       </View>
