@@ -65,7 +65,7 @@ export default function App() {
     }
   }
   const handleclickC = () => {
-     setMyConst(const1.pop())
+     const1.pop();
   }
   const handleClickplus = () => {
     const myConst = inputValue.trim();
