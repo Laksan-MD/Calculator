@@ -65,7 +65,8 @@ export default function App() {
     }
   }
   const handleclickC = () => {
-     const1.pop();
+    const lap = const1.trim().split(" ")
+      console.log( lap.pop())
   }
   const handleClickplus = () => {
     const myConst = inputValue.trim();
@@ -213,7 +214,7 @@ export default function App() {
            </TouchableOpacity>
            </View>
                    <View  className=" ml-30" style={{flexDirection:'column'}}>
-           <TouchableOpacity  onPress={handleclickC} style={{width:horizontalScale(74) ,height:verticalScale(63)}}className="bg-indigo-400 w-20 h-16 text-3xl ml-3 mt-1 inline-block rounded-xl justify-center items-center ">
+           <TouchableOpacity   style={{width:horizontalScale(74) ,height:verticalScale(63)}}className="bg-indigo-400 w-20 h-16 text-3xl ml-3 mt-1 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">C</Text>
            </TouchableOpacity>
            <TouchableOpacity onPress={handleClick8}  style={{width:horizontalScale(74) ,height:verticalScale(63)}}className="bg-red-400 w-20 h-16 text-3xl ml-3 mt-3 inline-block rounded-xl justify-center items-center ">
