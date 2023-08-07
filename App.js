@@ -191,7 +191,7 @@ export default function App() {
       <View className="bg-whitesmoke text-white h-full  flex justify-center items-center">
       {/* <Text  onPress={  handleClick("Pressed The Text")} className="text-2xl text-white">Laksan</Text> */}
       <SafeAreaView style={{flexDirection:"row"}} className=" mb-96 bg-[#ffffff] h-full w-full flex items-center rounded-xl">  
-        <View style={{flexDirection:'column'}} className="content-end">
+        <View style={{flexDirection:'column'}} >
            <TouchableOpacity onPress={handleClickCE} style={{width:horizontalScale(74) ,height:verticalScale(63)}}className="bg-indigo-400  text-3xl  ml-6 mt-1 inline-block rounded-xl justify-center items-center ">
             <Text className="text-2xl">CE</Text>
            </TouchableOpacity>
