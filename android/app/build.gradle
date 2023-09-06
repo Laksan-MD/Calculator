@@ -113,7 +113,7 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.calculator"
+    namespace 'com.laksanmd.Calculator'
     defaultConfig {
         applicationId 'com.laksanmd.Calculator'
         minSdkVersion rootProject.ext.minSdkVersion
