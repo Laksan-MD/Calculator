@@ -21,7 +21,7 @@ export default function App() {
     };
   
     const handleButtonPress = () => {
-      // Here, you can use the inputValue value as needed
+      
 
       const myConst = inputValue.trim();
       const myArray = const1.trim().split(" ");
@@ -69,12 +69,6 @@ export default function App() {
       console.log( lap.pop())
   }
   const handleClickplus = () => {
-    const myConst = inputValue.trim();
-    const myArray = const1.trim().split(" ");
-    const ma1 = myArray[1];
-    const ma2 = parseFloat(myArray[2]);
-    const ma0 = parseFloat(myArray[0]);
-    console.log(myArray)
     if(const1==0){
       setMyConst(' + ');
     }else{
